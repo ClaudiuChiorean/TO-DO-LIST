@@ -5,32 +5,30 @@ const btnRemove = document.querySelector('.btn-remove');
 
 
 
-btnCreate.addEventListener('click', () => {												 
-  const input = document.querySelector('.input-main');
+btnCreate.addEventListener('click', () => {
+	const input = document.querySelector('.input-main');
 	const list = document.querySelector('ul');
-if (input.value == '') {
-	alert('You must write a task !');
-
-	
+	if (input.value == '') {
+		alert('You must write a task !');
 	} else {
 		list.insertAdjacentHTML(
 			'afterbegin',
 			`<li>${input.value}</li>`
 		);
-	  input.value = '';
+		input.value = '';
 	};
 });
 
 btnToggle.addEventListener('click', () => {
-  const listContainer = document.querySelector('.list-container');
+	const listContainer = document.querySelector('.list-container');
 
 	if (listContainer.style.display === 'none') {
 		btnToggle.textContent = 'Hide List';
 		listContainer.removeAttribute('style');
 	} else {
 		btnToggle.textContent = 'Show List';
-		listContainer.style.display = 'none'; 	
-	}		
+		listContainer.style.display = 'none';
+	}
 });
 
 
@@ -38,10 +36,10 @@ btnToggle.addEventListener('click', () => {
 btnRemove.addEventListener('click', () => {
 	const lastItem = document.querySelector('li:last-child');
 	// lastItem.remove();
-	if (lastItem ) {
+	if (lastItem) {
 		lastItem.remove();
-			
-	}else {
+
+	} else {
 		alert('There are no more Tasks on your list !');
 	}
 });
